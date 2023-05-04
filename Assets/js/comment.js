@@ -8,6 +8,8 @@ function checkedWord(word) {
     return (`${word.slice(0, 1).toUpperCase()}${word.slice(1).toLowerCase()}`);
 };
 
+
+
 button.addEventListener('click', () => {
     console.log(userName.value);
 
@@ -20,13 +22,15 @@ button.addEventListener('click', () => {
     let yourName = checkedWord(fullName[1]); 
     let patronymik = checkedWord(fullName[2]);
     let finalFullName = `${surname} ${yourName} ${patronymik}`;
-    let antiSpam = checkedSpam(chat);
+    let now = new Date();
+    console.log(now);
 
     chat.innerHTML = `
         <div id="message" class="message">
                     <p>Чат</p>
                     <img src=${urlAvatar}
                     alt="Аватар" class="avatar" />
+                    <p class="userName">${now}</p> 
                     <p class="userName">${finalFullName}</p> 
                     <p class="text">${comment.value}</p>
                 </div>
