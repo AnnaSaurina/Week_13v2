@@ -3,6 +3,7 @@ let urlImage = document.getElementById('urlElement');
 let comment = document.getElementById('commentElement');
 let button = document.querySelector('.buttonElement');
 let chat = document.querySelector('.chat');
+let checkName = document.getElementById('checkboxName');
 
 function checkedWord(word) {
     return (`${word.slice(0, 1).toUpperCase()}${word.slice(1).toLowerCase()}`);
