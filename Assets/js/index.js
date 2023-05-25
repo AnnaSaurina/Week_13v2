@@ -5,7 +5,7 @@ let button = document.querySelector('.buttonElement');
 let chat = document.querySelector('.chat');
 
 function checkedWord(word) {
-    return (word.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' '));
+    return (word.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' ')); 
 };
 
 button.addEventListener('click', () => {
@@ -16,6 +16,7 @@ button.addEventListener('click', () => {
     let commentChat = comment.value;
     let chatSpam = commentChat.replace(/xxx/gi, '***').replace(/viagra/gi, '***');
     let now = new Date();
+
 
     chat.innerHTML = `
         <div id="message" class="message">
