@@ -15,12 +15,14 @@ button.addEventListener('click', () => {
     let finalFullName = checkedWord(user);
     let commentChat = comment.value;
     let chatSpam = commentChat.replace(/xxx/gi, '***').replace(/viagra/gi, '***');
+    let now = new Date();
 
     chat.innerHTML = `
         <div id="message" class="message">
                     <p>Чат</p>
                     <img src=${urlAvatar}
                     alt="Аватар" class="avatar" />
+                    <p class="userName">${now}</p> 
                     <p class="userName">${finalFullName}</p> 
                     <p class="text">${chatSpam}</p>
                 </div>
