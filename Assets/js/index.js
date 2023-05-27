@@ -3,12 +3,13 @@ let urlImage = document.getElementById('urlElement');
 let comment = document.getElementById('commentElement');
 let button = document.querySelector('.buttonElement');
 let chat = document.querySelector('.chat');
-let avatarImage = [ 'https://webmg.ru/wp-content/uploads/2022/06/i-226-1.jpeg',
-                    'https://i.pinimg.com/originals/32/80/0d/32800da238d71a6c8a9c7d207fa2953f.jpg',
-                    'https://yt3.ggpht.com/ytc/AKedOLRdDIsL8mWcqWbOvPP8bDPoC1sWrPT571fuDa2ZPw=s900-c-k-c0x00ffffff-no-rj',
-                    'https://i.pinimg.com/originals/9d/af/02/9daf02c70c709f3cf83b580aff0a8492.jpg',
-                    'https://yt3.ggpht.com/ytc/AKedOLS6dA4YNCbzaH6TQshoJOzGnuC4nNU0Vf_8burD=s900-c-k-c0x00ffffff-no-rj'
-                ];
+let avatarImage = [ 
+    'https://webmg.ru/wp-content/uploads/2022/06/i-226-1.jpeg',
+    'https://i.pinimg.com/originals/32/80/0d/32800da238d71a6c8a9c7d207fa2953f.jpg',
+    'https://webmg.ru/wp-content/uploads/2022/06/i-262-1.jpeg',
+    'https://i.pinimg.com/originals/9d/af/02/9daf02c70c709f3cf83b580aff0a8492.jpg',
+    'https://i.pinimg.com/originals/ee/60/46/ee6046b157ba7c1fff38ab06a2cc7f5d.jpg'
+    ];
 
 
 function checkedWord(word) {
@@ -16,15 +17,18 @@ function checkedWord(word) {
 };
 
 button.addEventListener('click', () => {
-
-    if (urlImage.value == '') {
+let url = '';
+    if (!urlImage.value) {
         let avatarRandom = Math.floor(Math.random(avatarImage) * 5);
-        console.log(avatarImage[avatarRandom]);
-        let urlAvatar = avatarImage[avatarRandom];
+        console.log();
+        url = avatarImage[avatarRandom];
     } else {
-        let urlAvatar = urlImage.value;
+        url = urlImage.value;
     }
 
+    
+
+    let urlAvatar = urlImage.value;
     let user = userName.value;
     let finalFullName = checkedWord(user);
     let commentChat = comment.value;
@@ -35,7 +39,7 @@ button.addEventListener('click', () => {
     chat.innerHTML = `
         <div id="message" class="message">
                     <p>Чат</p>
-                    <img src=${urlAvatar}
+                    <img src=${url}
                     alt="Аватар" class="avatar" />
                     <p class="userName">${now}</p> 
                     <p class="userName">${finalFullName}</p> 
