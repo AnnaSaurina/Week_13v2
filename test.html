@@ -10,9 +10,14 @@
 
 <body>
     <script>
-        let d = new Date(2016, 2, 9);
-
-        console.log(d);
+        let visitor = 'гость';
+        if (!guestName.value) {
+            visitor = 'username';
+            console.log('user');
+        } else {
+            visitor = guestName.value;
+            console.log('link');
+        }
     </script>
 </body>
 

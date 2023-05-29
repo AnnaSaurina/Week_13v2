@@ -1,4 +1,5 @@
-let userName = document.getElementById('nameElement');
+let checkUserName = document.querySelector('.checkboxName');
+let guestName = document.getElementById('nameElement');
 let urlImage = document.getElementById('urlElement');
 let comment = document.getElementById('commentElement');
 let button = document.querySelector('.buttonElement');
@@ -16,8 +17,10 @@ function checkedWord(word) {
     return (word.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' ')); 
 };
 
+
+
 button.addEventListener('click', () => {
-let url = '';
+    let url = '';
     if (!urlImage.value) {
         let avatarRandom = Math.floor(Math.random(avatarImage) * 5);
         console.log();
@@ -26,10 +29,31 @@ let url = '';
         url = urlImage.value;
     }
 
-    
+    // let visitor = '';
+    // if (!guestName.value) {
+    //     visitor = 'username'; 
+    //     console.log('user');
+    // } else {
+    //     visitor = guestName.value;
+    //     console.log('link');
+    // }
+
+    let checkName = checkUserName.value;
+    if (document.querySelector('.checkboxName').checked) {
+        document.querySelector('.checkboxName').innerHTML = checkName;
+
+    }
+    else {
+        document.querySelector('.checkboxName').innerHTML = '';
+    }
+
+
+
+
+
 
     let urlAvatar = urlImage.value;
-    let user = userName.value;
+    let user = guestName.value;
     let finalFullName = checkedWord(user);
     let commentChat = comment.value;
     let chatSpam = commentChat.replace(/xxx/gi, '***').replace(/viagra/gi, '***');
@@ -41,7 +65,7 @@ let url = '';
                     <p>Чат</p>
                     <img src=${url}
                     alt="Аватар" class="avatar" />
-                    <p class="userName">${now}</p> 
+                    <p class="date">${now}</p> 
                     <p class="userName">${finalFullName}</p> 
                     <p class="text">${chatSpam}</p>
                 </div>
