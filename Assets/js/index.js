@@ -29,27 +29,23 @@ button.addEventListener('click', () => {
         url = urlImage.value;
     }
 
-    // let visitor = '';
-    // if (!guestName.value) {
-    //     visitor = 'username'; 
-    //     console.log('user');
-    // } else {
-    //     visitor = guestName.value;
-    //     console.log('link');
+    let visitor = '';
+    if (!guestName.value) {
+        visitor = guestName.value;
+        // console.log('user');
+    } else {
+        visitor = 'username'; 
+        // console.log('link');
+    }
+
+    // let checkName = checkUserName.value;
+    // if (document.querySelector('.checkboxName').checked) {
+    //     document.querySelector('.checkboxName').innerHTML = checkName;
+
     // }
-
-    let checkName = checkUserName.value;
-    if (document.querySelector('.checkboxName').checked) {
-        document.querySelector('.checkboxName').innerHTML = checkName;
-
-    }
-    else {
-        document.querySelector('.checkboxName').innerHTML = '';
-    }
-
-
-
-
+    // else {
+    //     document.querySelector('.checkboxName').innerHTML = '';
+    // }
 
 
     let urlAvatar = urlImage.value;
