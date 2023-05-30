@@ -51,6 +51,7 @@ button.addEventListener('click', () => {
     let urlAvatar = urlImage.value;
     let user = guestName.value;
     let finalFullName = checkedWord(user);
+    // let visitor = finalFullName;
     let commentChat = comment.value;
     let chatSpam = commentChat.replace(/xxx/gi, '***').replace(/viagra/gi, '***');
     let now = new Date();
