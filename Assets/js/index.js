@@ -11,6 +11,7 @@ let avatarImage = [
     'https://i.pinimg.com/originals/9d/af/02/9daf02c70c709f3cf83b580aff0a8492.jpg',
     'https://i.pinimg.com/originals/ee/60/46/ee6046b157ba7c1fff38ab06a2cc7f5d.jpg'
     ];
+let now = new Date();
 
 
 function checkedWord(word) {
@@ -54,7 +55,7 @@ button.addEventListener('click', () => {
     // let visitor = finalFullName;
     let commentChat = comment.value;
     let chatSpam = commentChat.replace(/xxx/gi, '***').replace(/viagra/gi, '***');
-    let now = new Date();
+
     
 
     chat.innerHTML = `
